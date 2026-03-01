@@ -5,7 +5,7 @@ export const matchStatusEnum = pgEnum('match_status',['scheduled','live','finish
 export const matches = pgTable('matches',{
     id: serial('id').primaryKey(),
     sport:text('sport').notNull(),
-    homeTown:text('home_town').notNull(),
+    homeTeam:text('home_town').notNull(),
     awayTeam:text('away_team').notNull(),
     status:matchStatusEnum('status').notNull().default('scheduled'),
     startTime: timestamp('start_time'),
