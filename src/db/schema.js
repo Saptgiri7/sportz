@@ -27,7 +27,7 @@ export const commentary = pgTable('commentary',{
     message: text('message').notNull(),
     metadata: jsonb('metadata'),
     tags: text('tags').array(),
-    createadAt: timestamp('created_at').notNull().defaultNow()
+    createdAt: timestamp('created_at').notNull().defaultNow()
 })
 
 

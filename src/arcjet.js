@@ -12,7 +12,7 @@ export const httpArcjet = arcjetKey ?  arcjet({
     key: arcjetKey,
     rules: [
         shield({mode: arcjetMode}),
-        detectBot({mode:arcjetMode,allow:['CATEGORY:SEARCH_ENGINE', 'CATEGORY:PREVIEW']}),
+        detectBot({mode:arcjetMode,allow:['CATEGORY:SEARCH_ENGINE', 'CATEGORY:PREVIEW','POSTMAN']}),
         slidingWindow({mode:arcjetMode, interval:'10s', max: 50})
     ],
 
@@ -26,7 +26,6 @@ export const wsArcjet = arcjetKey ? arcjet({
         slidingWindow({mode:arcjetMode, interval:'2s', max: 5})
     ],
 }) : null;
-
 
 
 export function securityMiddleware(){
@@ -49,8 +48,6 @@ export function securityMiddleware(){
             return res.status(503).json({error: 'service unavailable'})
             
         }
-
-
         next();
     }
 }
